@@ -2,5 +2,10 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/app/src/main/java/com/syd/source/aosp/bootable/recovery" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/app/src/main/java/com/syd/source/aosp/build/blueprint" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/app/src/main/java/com/syd/source/aosp/build/kati" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/app/src/main/java/com/syd/source/aosp/build/make" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/app/src/main/java/com/syd/source/aosp/build/soong" vcs="Git" />
   </component>
 </project>
