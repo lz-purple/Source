@@ -1,0 +1,34 @@
+cc_library_host_shared {
+    name: "libsepolwrap",
+    srcs: ["sepol_wrap.cpp"],
+    shared_libs: ["libbase", "libsepol"],
+    cflags: ["-Wall", "-Werror",],
+    export_include_dirs: ["include"],
+}
+
+cc_prebuilt_binary {
+    name: "mini_parser.py",
+    srcs: ["mini_parser.py"],
+    host_supported: true,
+}
+
+cc_prebuilt_binary {
+    name: "policy.py",
+    srcs: ["policy.py"],
+    host_supported: true,
+    required: ["libsepolwrap"],
+}
+
+cc_prebuilt_binary {
+    name: "treble_sepolicy_tests.py",
+    srcs: ["treble_sepolicy_tests.py"],
+    host_supported: true,
+    required: ["mini_parser.py", "policy.py"],
+}
+
+cc_prebuilt_binary {
+    name: "sepolicy_tests.py",
+    srcs: ["sepolicy_tests.py"],
+    host_supported: true,
+    required: ["policy.py"],
+}
