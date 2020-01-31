@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry including="com/google/protobuf/AbstractMessageLite.java|com/google/protobuf/AbstractParser.java|com/google/protobuf/AbstractProtobufList.java|com/google/protobuf/ByteOutput.java|com/google/protobuf/ByteString.java|com/google/protobuf/BooleanArrayList.java|com/google/protobuf/CodedInputStream.java|com/google/protobuf/CodedOutputStream.java|com/google/protobuf/DoubleArrayList.java|com/google/protobuf/ExperimentalApi.java|com/google/protobuf/ExtensionLite.java|com/google/protobuf/ExtensionRegistryLite.java|com/google/protobuf/FieldSet.java|com/google/protobuf/FloatArrayList.java|com/google/protobuf/GeneratedMessageLite.java|com/google/protobuf/IntArrayList.java|com/google/protobuf/Internal.java|com/google/protobuf/InvalidProtocolBufferException.java|com/google/protobuf/LazyField.java|com/google/protobuf/LazyFieldLite.java|com/google/protobuf/LazyStringArrayList.java|com/google/protobuf/LazyStringList.java|com/google/protobuf/LongArrayList.java|com/google/protobuf/MapFieldLite.java|com/google/protobuf/MessageLite.java|com/google/protobuf/MessageLiteToString.java|com/google/protobuf/MessageLiteOrBuilder.java|com/google/protobuf/MutabilityOracle.java|com/google/protobuf/Parser.java|com/google/protobuf/ProtobufArrayList.java|com/google/protobuf/ProtocolStringList.java|com/google/protobuf/RopeByteString.java|com/google/protobuf/SmallSortedMap.java|com/google/protobuf/TextFormatEscaper.java|com/google/protobuf/UninitializedMessageException.java|com/google/protobuf/UnknownFieldSetLite.java|com/google/protobuf/UnmodifiableLazyStringList.java|com/google/protobuf/Utf8.java|com/google/protobuf/WireFormat.java" kind="src" output="bin/lite" path="java/core/src/main/java">
+		<attributes>
+			<attribute name="gradle_scope" value="lite"/>
+			<attribute name="gradle_used_by_scope" value="lite"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry including="com/google/protobuf/micro/*" kind="src" output="bin/micro" path="javamicro/src/main/java">
+		<attributes>
+			<attribute name="gradle_scope" value="micro"/>
+			<attribute name="gradle_used_by_scope" value="micro"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry including="com/google/protobuf/nano/**" kind="src" output="bin/nano" path="javanano/src/main/java">
+		<attributes>
+			<attribute name="gradle_scope" value="nano"/>
+			<attribute name="gradle_used_by_scope" value="nano"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry including="com/google/protobuf/nano/**" kind="src" output="bin/nano" path="javanano/src/device/main/java">
+		<attributes>
+			<attribute name="gradle_scope" value="nano"/>
+			<attribute name="gradle_used_by_scope" value="nano"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8/"/>
+	<classpathentry kind="con" path="org.eclipse.buildship.core.gradleclasspathcontainer"/>
+	<classpathentry kind="output" path="bin/default"/>
+</classpath>

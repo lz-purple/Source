@@ -1,0 +1,6 @@
+# These first entries are due to autotest noise. As you maintain this
+# list, consider offsetting it with a blacklist in
+# ensure_no_nonrelease_files.config.
+sshd *:ssh
+# Shill internal http proxy. crosbug.com/28235
+shill 127.0.0.1:DYNAMIC

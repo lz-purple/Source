@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry including="com/google/i18n/phonenumbers/AlternateFormatsCountryCodeSet.java|com/google/i18n/phonenumbers/AsYouTypeFormatter.java|com/google/i18n/phonenumbers/CountryCodeToRegionCodeMap.java|com/google/i18n/phonenumbers/MetadataLoader.java|com/google/i18n/phonenumbers/MetadataManager.java|com/google/i18n/phonenumbers/NumberParseException.java|com/google/i18n/phonenumbers/Phonemetadata.java|com/google/i18n/phonenumbers/Phonenumber.java|com/google/i18n/phonenumbers/PhoneNumberMatch.java|com/google/i18n/phonenumbers/PhoneNumberMatcher.java|com/google/i18n/phonenumbers/PhoneNumberUtil.java|com/google/i18n/phonenumbers/RegexCache.java|com/google/i18n/phonenumbers/ShortNumbersRegionCodeSet.java" kind="src" output="bin/main" path="libphonenumber/src">
+		<attributes>
+			<attribute name="gradle_scope" value="main"/>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8/"/>
+	<classpathentry kind="con" path="org.eclipse.buildship.core.gradleclasspathcontainer"/>
+	<classpathentry kind="output" path="bin/default"/>
+</classpath>

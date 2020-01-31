@@ -1,0 +1,69 @@
+#!/bin/sh
+# Copyright (c) 2015-2016 Oracle and/or its affiliates. All Rights Reserved.
+# Copyright (c) International Business Machines  Corp., 2005
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License as
+# published by the Free Software Foundation; either version 2 of
+# the License, or (at your option) any later version.
+#
+# This program is distributed in the hope that it would be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program. If not, see <http://www.gnu.org/licenses/>.
+#
+# Author: Mitsuru Chinen <mitch@jp.ibm.com>
+
+TST_TOTAL=1
+TCID=if4-addr-change
+TST_CLEANUP="do_cleanup"
+
+. test_net.sh
+
+CHECK_INTERVAL=${CHECK_INTERVAL:-$(($NS_TIMES / 20))}
+# Maximum host portion of the IPv4 address on the local host
+LHOST_IPV4_HOST_MAX="254"
+
+do_cleanup()
+{
+	tst_restore_ipaddr
+	tst_wait_ipv6_dad
+}
+
+trap "tst_brkm TBROK 'test interrupted'" INT
+
+tst_check_cmds ifconfig
+
+tst_resm TINFO "ifconfig changes IPv4 address $NS_TIMES times"
+
+cnt=0
+num=1
+while [ $cnt -lt $NS_TIMES ]; do
+	# Define the network portion
+	num=$(($num + 1))
+	[ $num -gt $LHOST_IPV4_HOST_MAX ] && num=1
+
+	[ $num -eq $RHOST_IPV4_HOST ] && continue
+
+	# Change IPv4 address
+	lhost_ipv4addr="${IPV4_NETWORK}.${num}"
+
+	ifconfig $(tst_iface) $lhost_ipv4addr netmask 255.255.255.0 \
+		broadcast 255.255.255.255 || \
+		tst_brkm TFAIL "Failed to change into ${lhost_ipv4addr}"
+
+	cnt=$(($cnt + 1))
+
+	[ $CHECK_INTERVAL -eq 0 ] && continue
+	[ $(($cnt % $CHECK_INTERVAL)) -ne 0 ] && continue
+
+	tst_resm TINFO "ping $(tst_ipaddr):$(tst_ipaddr rhost) ${cnt}/$NS_TIMES"
+	EXPECT_PASS tst_ping
+done
+
+EXPECT_PASS tst_ping
+
+tst_exit
